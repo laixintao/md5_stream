@@ -1,0 +1,11 @@
+[Unit]
+Description=Flask md5 stream
+
+[Service]
+Type=forking
+ExecStart=/opt/taobao/nginx/bin/t-alipay-tengine -c /home/admin/takachiho/deploy/nginx.conf
+ExecStop=/bin/kill -s QUIT $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
